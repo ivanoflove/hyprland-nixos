@@ -19,7 +19,7 @@
       xdg-desktop-portal-wlr
     ];
   };
-  
+  # 
   # services = {
     # gvfs.enable = true; # Mount, trash, and other functionalities
     # tumbler.enable = true; # Thumbnail support for images
@@ -53,7 +53,7 @@
       };
     };
 
-  programs.dconf.enable = true;
+  # programs.dconf.enable = true;
 
 
 }
