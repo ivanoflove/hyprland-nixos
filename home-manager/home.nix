@@ -28,6 +28,7 @@
     betterdiscord-installer
     firefox
     kitty
+    google-chrome-dev
 
     #utils
     ranger
