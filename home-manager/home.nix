@@ -33,7 +33,7 @@
     #utils
     kitty
     ranger
-    wlr-randr
+    # wlr-randr
     git
     gnumake
     catimg

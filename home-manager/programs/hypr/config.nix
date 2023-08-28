@@ -1,3 +1,5 @@
+#./config.nix
+''
 # Monitor
 monitor=eDP-1,disable
 monitor=DP-1,1920x1080@165,auto,1
@@ -176,3 +178,4 @@ bind = $mainMod, mouse_up, workspace, e-1
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 bindm = ALT, mouse:272, resizewindow
+''

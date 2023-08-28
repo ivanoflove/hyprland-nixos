@@ -19,7 +19,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi"; 
   boot.loader.systemd-boot.configurationLimit = 10;
-  
+
+
   # gpu set
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.blacklistedKernelModules = [ "nouveau" ];
@@ -128,7 +129,7 @@
   # nixpkgs.config.cudaSupport = true;
   security.sudo.wheelNeedsPassword = false;
   
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   # programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -139,7 +140,7 @@
     packages = with pkgs; [];
     # shell = pkgs.zsh;
   };
-
+  nix.settings.trusted-users = [ "ivan" ];  # 将自己的用户名添加到可信列表中
   # environment.shells = with pkgs; [ zsh ];
   
   environment.systemPackages = with pkgs;[
