@@ -7,6 +7,5 @@
     ./rofi
     ./waybar
     ./zsh
-    ./micro
   ];
 }

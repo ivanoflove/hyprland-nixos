@@ -1,6 +1,4 @@
-{ hyprland, pkgs, ...}:
-
-{
+{ hyprland, pkgs, ...}: {
 
   imports = [
     hyprland.homeManagerModules.default
@@ -9,31 +7,31 @@
     ./scripts
     ./themes
   ];
-  
-  
-  home.username = "ivan";
-  home.homeDirectory = "/home/ivan";
-  home.stateVersion = "23.05";
-  
-  home.packages = (with pkgs;[
 
+  home = {
+    username = "ivan";
+    homeDirectory = "/home/ivan";
+  };
+
+  home.packages = (with pkgs; [
+    
     #User Apps
     celluloid
+    discord
+    librewolf
+    cool-retro-term
     bibata-cursors
     vscode
     lollypop
-    google-chrome-dev
-    librewolf
-    yesplaymusic
-    aria
-    v2ray
-    v2raya
-    (opera.override { proprietaryCodecs = true; })
+    lutris
+    openrgb
+    betterdiscord-installer
+    firefox
+    kitty
 
     #utils
-    kitty
     ranger
-    # wlr-randr
+    wlr-randr
     git
     gnumake
     catimg
@@ -59,7 +57,6 @@
     exa
     btop
 
-    
   ]) ++ (with pkgs.gnome; [ 
     nautilus
     zenity
@@ -68,20 +65,15 @@
     gedit
   ]);
 
-  # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
-  # xresources.properties = {
-    # "Xcursor.size" = 16;
-    # "Xft.dpi" = 106;
-  # };
-  
- 
-  # git 相关配置
+  programs.home-manager.enable = true;
+
+  home.stateVersion = "23.05";
+
+   # git 相关配置
   programs.git = {
     enable = true;
     userName = "ivanoflove";
     userEmail = "1666210663@qq.com";
   };
   
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
