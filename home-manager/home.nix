@@ -16,6 +16,15 @@
   home.packages = (with pkgs; [
     
     #User Apps
+    (appimageTools.wrapType2 
+      { # or wrapType1
+        name = "aliyunpan";
+        src = fetchurl {
+          url = "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.11.19/XBYDriver-3.11.19-linux-x86_64.AppImage";
+          hash = "sha256-LaIqghleQ/k6kZ6DfFYvl3t5oB0tALXg4Z6OFotwhAI=";
+        };
+      extraPkgs = pkgs: with pkgs; [ ];
+    })
     celluloid
     discord
     librewolf
