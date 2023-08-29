@@ -38,6 +38,7 @@
     firefox
     kitty
     google-chrome-dev
+    qq
 
     #utils
     ranger
@@ -66,6 +67,7 @@
     tty-clock
     exa
     btop
+    udiskie
 
   ]) ++ (with pkgs.gnome; [ 
     nautilus
