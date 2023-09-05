@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nvidiaoffload.nix
+      ./nvidiaamd.nix
       ./fonts.nix
       ./fcitx.nix
       ./desktop.nix
@@ -84,7 +84,16 @@
   services.power-profiles-daemon.enable = true;
 
 
-  
+  systemd.services.set_wallpapers_permissions = {
+    description = "Set permissions for .config/wallpapers";
+    after = [ "local-fs.target" ]; # 确保在文件系统加载后运行
+
+    script = ''
+      mkdir -p /home/ivan/.config/wallpapers
+      chmod 777 /home/ivan/.config/wallpapers
+    '';
+  };
+ 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;

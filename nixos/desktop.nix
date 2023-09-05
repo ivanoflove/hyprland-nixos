@@ -2,16 +2,16 @@
 {
  
   programs.regreet.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
-        user = "ivan";
-        command = "$SHELL -l";
+    services.greetd = {
+       enable = true;
+       settings = {
+       initial_session = {
+         user = "ivan";
+         command = "$SHELL -l";
+       };
       };
-     };
-   };
-  # services.xserver.displayManager.sddm.enable = true;
+  };
+  # services.xserver.displayManager.lightdm.enable = true;
   
   xdg.portal = {
     enable = true;

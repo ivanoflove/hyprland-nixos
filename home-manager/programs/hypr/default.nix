@@ -17,8 +17,20 @@
     enable = true; 
     systemdIntegration = true; 
     enableNvidiaPatches = true; 
-    extraConfig = builtins.readFile ./config.nix;
+    # extraConfig = builtins.readFile ./config.nix;
   };
 
-  home.file.".config/hypr/colors".source = ./colors.nix;
+  # home.file.".config/hypr/colors".source = ./colors.nix;
+  # home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+ 
+  home.file.".config/hypr" = {
+    source = ./hypr;
+    recursive = true;
+  };
+  
+  home.file.".config/wallpapers" = {
+    source = ../../wallpapers;
+    recursive = true;
+
+  }; 
 }
